@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <title>TicketHack</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="header">
+      <h2>TicketHack</h2>
+      <h3 id="cart">Cart</h3>
+      <h3 id="bookings">Bookings</h3>
+    </div>
+    <div id="title">
+      <h1>Explore the world effortlessly by train!</h1>
+      <h3>
+        Compare, book and enjoy cheap prices for train tickets: your journey
+        starts on Tickethack.
+      </h3>
+    </div>
+    <div class="row justify-content-evenly">
+      <div id="content-left" class="col-4">
+        <input id="cityNameInput" type="text" placeholder="Departure" />
+        <input id="cityNameInput" type="text" placeholder="Arrival" />
+        <input type="date" id="travelDay" name="travelDay" />
+        <button type="button" id="btn-search" class="btn btn-success">
+          Search
+        </button>
+      </div>
+      <div id="content-right" class="col-4">
+        Content Right
+        <img class="imgtrain" src="images/train.png" />
+        <span>It's time to book your future trip</span>
+      </div>
+    </div>
+    <div id="footer"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
