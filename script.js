@@ -1,14 +1,16 @@
+console.log('ok')
 //--------------Création des trajets dans book-container
 
 let bookings = [];//C'est le panier des trajet
 let total;//Montant total des trajets
 
 document.querySelector('#btn-search').addEventListener('click', function () {
-	fetch('http://localhost:3000/index/mycart')
+	fetch('http://localhost:3000/mycart')
 		.then (response => response.json())
 		.then(data => {
+			console.log(data)
 			if (data.result) {
-				Trip.forEach((trajet) => {
+				data.forEach((trajet) => {
 					//Récupération de l'heure dans la clé date de l'objet trajet
 					const dateValue = trajet.date;
 					const timeValue = moment(dateValue).format('HH:mm');
@@ -30,12 +32,13 @@ document.querySelector('#btn-search').addEventListener('click', function () {
 					<div>
 					<p id="price">${trajet.price}</p>
 					</div>
-					<button id="book">BOOK</button>
+					<button type="button" class="book btn btn-success">BOOK</button>
 						`;
 					bookings.push(trajet);
 					//on fait le total des prix des différents trajets avec la méthode reduce((acc,e)=>{},départ)
 					total = bookings.reduce((cumul, trajet) => cumul + trajet.price, 0);
 				})
+				document.querySelector('#book-container').innerHTML = '';
 			}else {
 				console.log('Pas de trajet')
 			}
