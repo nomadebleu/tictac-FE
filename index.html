@@ -12,7 +12,8 @@
     <title>TicketHack</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <!-- Creation d'un id pour body afin de reutiliser le même CSS sans l'image en background -->
+  <body id="accueil">
     <div id="container-page">
         <div id="header">
           <!-- remplacement des h1...par des span car il faut un titre par page. Les 3 mots sont modifiables avec l'id et la balise span -->
@@ -70,9 +71,9 @@
                       <p id="time">18:30</p>
                     </div>
                     <div>
-                    <p id="price">52e</p>
+                    <p id="price">52€</p>
                     </div>
-                    <button id="book">BOOK</button>
+                    <button type="button" id="book" class="btn btn-success">BOOK</button>
                   </div><!--fin bloc voyage-->
               </div><!--fin book container/LES TRAJETS-->
 

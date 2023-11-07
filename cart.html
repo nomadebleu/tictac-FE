@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <title>Cart</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container-page">
+      <div id="header">
+        <span id="tickethack">Tickethack</span>
+
+        <div id="menu-right">
+          <span id="cart">Cart</span>
+          <span id="bookings">Bookings</span>
+        </div>
+      </div>
+      <div id="result-content" class="result-content">
+        <span id="title-cart"> No tickets in your cart.</span>
+        <span> Why not plan a trip? </span>
+        <!-- BLOC VOYAGE IN CART -->
+        <div class="trip">
+          <div>
+            <p id="departure">Paris</p>
+          </div>
+          <div>
+            <p>></p>
+          </div>
+          <div>
+            <p id="arrival">Lyon</p>
+          </div>
+          <div>
+            <p id="time">18:30</p>
+          </div>
+          <div>
+            <p id="price">52€</p>
+          </div>
+          <button type="button" id="delete" class="btn btn-success">X</button>
+        </div>
+        <!--fin bloc voyage-->
+        <!-- BLOC CHECKOUT CART -->
+        <div class="checkout-summary">
+          <div>
+            <p id="total-title">Total:</p>
+            <p id="total-amount">103€</p>
+          </div>
+          <button type="button" id="purchase" class="btn btn-success">
+            Purchase
+          </button>
+        </div>
+        <!--fin bloc checkout cart-->
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
