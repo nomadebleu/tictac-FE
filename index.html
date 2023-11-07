@@ -13,239 +13,72 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="header">
-       <!-- remplacement des h1...par des span car il faut un titre par page. Les 3 mots sont modifiables avec l'id et la balise span -->
-      
-      <span id="tickethack">Tickethack</span>
-      
-      <div id="menu-right">
-        <span id="cart">Cart</span>
-        <span id="bookings">Bookings</span>
-      </div>
-      
-    </div>
-    <div id="title">
-      <h1>Explore the world effortlessly by train!</h1>
-      <h3>
-        Compare, book and enjoy cheap prices for train tickets: your journey
-        starts on Tickethack.
-      </h3>
-    </div>
-    <div class="row justify-content-evenly">
-      <div id="content-left" class="col-4">
-        <input id="cityNameInput" type="text" placeholder="Departure" />
-        <input id="cityNameInput" type="text" placeholder="Arrival" />
-        <input type="date" id="travelDay" name="travelDay" />
-        <button type="button" id="btn-search" class="btn btn-success">
-          Search
-        </button>
-      </div>
-      <div id="content-right" class="col-4">
-         <!-- container avec les images en fonction des messages -->
-        <div id="no-book-container">
-          <div class="image-top">
-            <img class="imgtrain" src="images/train.png" />
-          </div>
-          <div class="text-bottom">
-            <p>It's time to book your future trip</p>
-          </div>
-          <div class="image-top">
-            <img class="imgtrain" src="images/notfound.png" />
-          </div>
-          <div class="text-bottom">
-            <p>No trip found.</p>
+    <div id="container-page">
+        <div id="header">
+          <!-- remplacement des h1...par des span car il faut un titre par page. Les 3 mots sont modifiables avec l'id et la balise span -->
+          <span id="tickethack">Tickethack</span>
+
+          <div id="menu-right">
+            <span id="cart">Cart</span>
+            <span id="bookings">Bookings</span>
           </div>
         </div>
-        <!-- container avec les trajets possibles -->
-        <div id="book-container">
-          <!-- le bloc avec la class trip représente un trajet -->
-          <div class ="trip">
-            <div>
-              <p id="departure">Paris</p>
-            </div>
-            <div>
-              <p>></p>
-            </div>
-            <div>
-              <p id="arrival">Lyon</p>
-            </div>
-            <div>
-               <p id="time">18:30</p>
-            </div>
-            <div>
-              <p id="price">52e</p>
-            </div>
-            <button id="book">BOOK</button>
-          </div>
-          <div class ="trip">
-            <div>
-              <p id="departure">Paris</p>
-            </div>
-            <div>
-              <p>></p>
-            </div>
-            <div>
-              <p id="arrival">Lyon</p>
-            </div>
-            <div>
-               <p id="time">18:30</p>
-            </div>
-            <div>
-              <p id="price">52e</p>
-            </div>
-            <button id="book">BOOK</button>
-          </div>
-          <div class ="trip">
-            <div>
-              <p id="departure">Paris</p>
-            </div>
-            <div>
-              <p>></p>
-            </div>
-            <div>
-              <p id="arrival">Lyon</p>
-            </div>
-            <div>
-               <p id="time">18:30</p>
-            </div>
-            <div>
-              <p id="price">52e</p>
-            </div>
-            <button id="book">BOOK</button>
-          </div>
-          <div class ="trip">
-            <div>
-              <p id="departure">Paris</p>
-            </div>
-            <div>
-              <p>></p>
-            </div>
-            <div>
-              <p id="arrival">Lyon</p>
-            </div>
-            <div>
-               <p id="time">18:30</p>
-            </div>
-            <div>
-              <p id="price">52e</p>
-            </div>
-            <button id="book">BOOK</button>
-          </div>
-          <div class ="trip">
-            <div>
-              <p id="departure">Paris</p>
-            </div>
-            <div>
-              <p>></p>
-            </div>
-            <div>
-              <p id="arrival">Lyon</p>
-            </div>
-            <div>
-               <p id="time">18:30</p>
-            </div>
-            <div>
-              <p id="price">52e</p>
-            </div>
-            <button id="book">BOOK</button>
-          </div>
-          <div class ="trip">
-            <div>
-              <p id="departure">Paris</p>
-            </div>
-            <div>
-              <p>></p>
-            </div>
-            <div>
-              <p id="arrival">Lyon</p>
-            </div>
-            <div>
-               <p id="time">18:30</p>
-            </div>
-            <div>
-              <p id="price">52e</p>
-            </div>
-            <button id="book">BOOK</button>
-          </div>
-          <div class ="trip">
-            <div>
-              <p id="departure">Paris</p>
-            </div>
-            <div>
-              <p>></p>
-            </div>
-            <div>
-              <p id="arrival">Lyon</p>
-            </div>
-            <div>
-               <p id="time">18:30</p>
-            </div>
-            <div>
-              <p id="price">52e</p>
-            </div>
-            <button id="book">BOOK</button>
-          </div>
-          <div class ="trip">
-            <div>
-              <p id="departure">Paris</p>
-            </div>
-            <div>
-              <p>></p>
-            </div>
-            <div>
-              <p id="arrival">Lyon</p>
-            </div>
-            <div>
-               <p id="time">18:30</p>
-            </div>
-            <div>
-              <p id="price">52e</p>
-            </div>
-            <button id="book">BOOK</button>
-          </div>
-          <div class ="trip">
-            <div>
-              <p id="departure">Paris</p>
-            </div>
-            <div>
-              <p>></p>
-            </div>
-            <div>
-              <p id="arrival">Lyon</p>
-            </div>
-            <div>
-               <p id="time">18:30</p>
-            </div>
-            <div>
-              <p id="price">52e</p>
-            </div>
-            <button id="book">BOOK</button>
-          </div>
-          <div class ="trip">
-            <div>
-              <p id="departure">Paris</p>
-            </div>
-            <div>
-              <p>></p>
-            </div>
-            <div>
-              <p id="arrival">Lyon</p>
-            </div>
-            <div>
-               <p id="time">18:30</p>
-            </div>
-            <div>
-              <p id="price">52e</p>
-            </div>
-            <button id="book">BOOK</button>
-          </div>
+        <!-- TITLE avec les titres -->
+        <div id="title">
+          <h1>Explore the world effortlessly by train!</h1>
+          <h3>Compare, book and enjoy cheap prices for train tickets: your journey starts on Tickethack.</h3>
+        </div>
+        <!-- CONTENT LEFT avec le CALENDRIER -->
+        <div id="content-left" class="col-4">
+            <input id="cityNameInput" type="text" placeholder="Departure" />
+            <input id="cityNameInput" type="text" placeholder="Arrival" />
+            <input id="travelDay" type="date"  name="travelDay" />
+            <button type="button" id="btn-search" class="btn btn-success">Search</button>
+        </div>
 
-      </div>
-        
-        
-      </div>
-    </div>
-    <div id="footer"></div>
+        <!-- CONTENT RIGHT avec les IMAGES ou les TRAJETS -->
+        <div id="content-right" class="col-4">
+            <!-- LES IMAGES & MESSAGES -->
+            <div id="no-book-container">
+                <div class="image-top">
+                  <img class="imgtrain" src="images/train.png" />
+                </div>
+                <div class="text-bottom">
+                  <p>It's time to book your future trip</p>
+                </div>
+                <div class="image-top">
+                  <img class="imgtrain" src="images/notfound.png" />
+                </div>
+                <div class="text-bottom">
+                  <p>No trip found.</p>
+                </div>
+              </div>
+            <!-- LES TRAJETS -->
+            <div id="book-container">
+                <!-- BLOC VOYAGE -->
+                <div class ="trip">
+                    <div>
+                      <p id="departure">Paris</p>
+                    </div>
+                    <div>
+                      <p>></p>
+                    </div>
+                    <div>
+                      <p id="arrival">Lyon</p>
+                    </div>
+                    <div>
+                      <p id="time">18:30</p>
+                    </div>
+                    <div>
+                    <p id="price">52e</p>
+                    </div>
+                    <button id="book">BOOK</button>
+                  </div><!--fin bloc voyage-->
+              </div><!--fin book container/LES TRAJETS-->
+
+              <div id="footer"></div>
+
+    </div><!--fin container-page--> 
     <script src="script.js"></script>
   </body>
 </html>
