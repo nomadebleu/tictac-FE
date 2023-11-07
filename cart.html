@@ -23,8 +23,39 @@
         </div>
       </div>
       <div id="result-content" class="result-content">
-        <span> No tickets in your cart.</span>
+        <span id="title-cart"> No tickets in your cart.</span>
         <span> Why not plan a trip? </span>
+        <!-- BLOC VOYAGE IN CART -->
+        <div class="trip">
+          <div>
+            <p id="departure">Paris</p>
+          </div>
+          <div>
+            <p>></p>
+          </div>
+          <div>
+            <p id="arrival">Lyon</p>
+          </div>
+          <div>
+            <p id="time">18:30</p>
+          </div>
+          <div>
+            <p id="price">52€</p>
+          </div>
+          <button type="button" id="delete" class="btn btn-success">X</button>
+        </div>
+        <!--fin bloc voyage-->
+        <!-- BLOC CHECKOUT CART -->
+        <div class="checkout-summary">
+          <div>
+            <p id="total-title">Total:</p>
+            <p id="total-amount">103€</p>
+          </div>
+          <button type="button" id="purchase" class="btn btn-success">
+            Purchase
+          </button>
+        </div>
+        <!--fin bloc checkout cart-->
       </div>
     </div>
     <script src="script.js"></script>

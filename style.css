@@ -101,7 +101,7 @@ h3 {
   display: none;
 }
 .trip {
-  background-color: rgb(245, 245, 240);
+  background-color: #f6eeef;
   border-radius: 5px;
   height: 50px;
   display: flex;
@@ -109,9 +109,10 @@ h3 {
   align-items: center;
   margin: 10px;
 }
+
 .result-content {
-  grid-row-start: 5;
-  grid-row-end: 8;
+  grid-row-start: 4;
+  grid-row-end: 9;
   grid-column-start: 3;
   grid-column-end: 12;
   width: 45vw;
@@ -122,4 +123,12 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
+}
+.checkout-summary {
+  background-color: #01153f;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0px;
 }
