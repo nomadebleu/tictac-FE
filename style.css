@@ -12,23 +12,40 @@ body {
   grid-row-end: 1;
   grid-column-start: 1;
   grid-column-end: 13;
+  height: 70px;
   display: flex;
-  justify-content: space-around;
+  justify-content:space-between;
   align-items: center;
   background-color: #f1f5f9;
 }
+#tickethack{
+  margin-left: 50px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #4fa890;
+}
+#cart, #bookings {
+  margin-right: 50px;
+  font-family:Arial, Helvetica, sans-serif;
+  color: black;
+  font-size: 15px;
+}
 #title {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  position: relative;
+  padding: 50px;
+  font-family:font-family:Arial, Helvetica, sans-serif;
   font-size: 16px;
   color: #f1f5f9;
   grid-row-start: 3;
   grid-row-end: 5;
   grid-column-start: 1;
   grid-column-end: 13;
-  display: inline-block;
-  justify-content: center;
+}
+h3 {
+  font-weight: lighter;
 }
 #content-left {
   grid-row-start: 6;
@@ -39,7 +56,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  width: 250px;
+  width: 45vw;
   margin: 30px;
   background-color: white;
   background-size: cover;
@@ -50,16 +67,30 @@ body {
   grid-row-end: 10;
   grid-column-start: 8;
   grid-column-end: 11;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 250px;
+  width: 45vw;
   margin: 30px;
   background-color: white;
-  background-size: cover;
   border-radius: 20px;
 }
 .btn-search {
   color: 469e86;
+}
+#book-container {
+  margin:20px;
+  height:50%;
+  display:flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+#no-book-container{
+  display:none;
+}
+.trip {
+  background-color: rgb(245, 245, 240);
+  border-radius: 5px;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
 }

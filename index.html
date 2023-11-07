@@ -14,9 +14,15 @@
   </head>
   <body>
     <div id="header">
-      <h2>TicketHack</h2>
-      <h3 id="cart">Cart</h3>
-      <h3 id="bookings">Bookings</h3>
+       <!-- remplacement des h1...par des span car il faut un titre par page. Les 3 mots sont modifiables avec l'id et la balise span -->
+      
+      <span id="tickethack">Tickethack</span>
+      
+      <div id="menu-right">
+        <span id="cart">Cart</span>
+        <span id="bookings">Bookings</span>
+      </div>
+      
     </div>
     <div id="title">
       <h1>Explore the world effortlessly by train!</h1>
@@ -35,9 +41,208 @@
         </button>
       </div>
       <div id="content-right" class="col-4">
-        Content Right
-        <img class="imgtrain" src="images/train.png" />
-        <span>It's time to book your future trip</span>
+         <!-- container avec les images en fonction des messages -->
+        <div id="no-book-container">
+          <div class="image-top">
+            <img class="imgtrain" src="images/train.png" />
+          </div>
+          <div class="text-bottom">
+            <p>It's time to book your future trip</p>
+          </div>
+          <div class="image-top">
+            <img class="imgtrain" src="images/notfound.png" />
+          </div>
+          <div class="text-bottom">
+            <p>No trip found.</p>
+          </div>
+        </div>
+        <!-- container avec les trajets possibles -->
+        <div id="book-container">
+          <!-- le bloc avec la class trip représente un trajet -->
+          <div class ="trip">
+            <div>
+              <p id="departure">Paris</p>
+            </div>
+            <div>
+              <p>></p>
+            </div>
+            <div>
+              <p id="arrival">Lyon</p>
+            </div>
+            <div>
+               <p id="time">18:30</p>
+            </div>
+            <div>
+              <p id="price">52e</p>
+            </div>
+            <button id="book">BOOK</button>
+          </div>
+          <div class ="trip">
+            <div>
+              <p id="departure">Paris</p>
+            </div>
+            <div>
+              <p>></p>
+            </div>
+            <div>
+              <p id="arrival">Lyon</p>
+            </div>
+            <div>
+               <p id="time">18:30</p>
+            </div>
+            <div>
+              <p id="price">52e</p>
+            </div>
+            <button id="book">BOOK</button>
+          </div>
+          <div class ="trip">
+            <div>
+              <p id="departure">Paris</p>
+            </div>
+            <div>
+              <p>></p>
+            </div>
+            <div>
+              <p id="arrival">Lyon</p>
+            </div>
+            <div>
+               <p id="time">18:30</p>
+            </div>
+            <div>
+              <p id="price">52e</p>
+            </div>
+            <button id="book">BOOK</button>
+          </div>
+          <div class ="trip">
+            <div>
+              <p id="departure">Paris</p>
+            </div>
+            <div>
+              <p>></p>
+            </div>
+            <div>
+              <p id="arrival">Lyon</p>
+            </div>
+            <div>
+               <p id="time">18:30</p>
+            </div>
+            <div>
+              <p id="price">52e</p>
+            </div>
+            <button id="book">BOOK</button>
+          </div>
+          <div class ="trip">
+            <div>
+              <p id="departure">Paris</p>
+            </div>
+            <div>
+              <p>></p>
+            </div>
+            <div>
+              <p id="arrival">Lyon</p>
+            </div>
+            <div>
+               <p id="time">18:30</p>
+            </div>
+            <div>
+              <p id="price">52e</p>
+            </div>
+            <button id="book">BOOK</button>
+          </div>
+          <div class ="trip">
+            <div>
+              <p id="departure">Paris</p>
+            </div>
+            <div>
+              <p>></p>
+            </div>
+            <div>
+              <p id="arrival">Lyon</p>
+            </div>
+            <div>
+               <p id="time">18:30</p>
+            </div>
+            <div>
+              <p id="price">52e</p>
+            </div>
+            <button id="book">BOOK</button>
+          </div>
+          <div class ="trip">
+            <div>
+              <p id="departure">Paris</p>
+            </div>
+            <div>
+              <p>></p>
+            </div>
+            <div>
+              <p id="arrival">Lyon</p>
+            </div>
+            <div>
+               <p id="time">18:30</p>
+            </div>
+            <div>
+              <p id="price">52e</p>
+            </div>
+            <button id="book">BOOK</button>
+          </div>
+          <div class ="trip">
+            <div>
+              <p id="departure">Paris</p>
+            </div>
+            <div>
+              <p>></p>
+            </div>
+            <div>
+              <p id="arrival">Lyon</p>
+            </div>
+            <div>
+               <p id="time">18:30</p>
+            </div>
+            <div>
+              <p id="price">52e</p>
+            </div>
+            <button id="book">BOOK</button>
+          </div>
+          <div class ="trip">
+            <div>
+              <p id="departure">Paris</p>
+            </div>
+            <div>
+              <p>></p>
+            </div>
+            <div>
+              <p id="arrival">Lyon</p>
+            </div>
+            <div>
+               <p id="time">18:30</p>
+            </div>
+            <div>
+              <p id="price">52e</p>
+            </div>
+            <button id="book">BOOK</button>
+          </div>
+          <div class ="trip">
+            <div>
+              <p id="departure">Paris</p>
+            </div>
+            <div>
+              <p>></p>
+            </div>
+            <div>
+              <p id="arrival">Lyon</p>
+            </div>
+            <div>
+               <p id="time">18:30</p>
+            </div>
+            <div>
+              <p id="price">52e</p>
+            </div>
+            <button id="book">BOOK</button>
+          </div>
+
+      </div>
+        
+        
       </div>
     </div>
     <div id="footer"></div>
