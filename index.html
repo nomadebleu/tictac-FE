@@ -12,29 +12,29 @@
     <title>TicketHack</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <!-- Creation d'un id pour body afin de reutiliser le même CSS sans l'image en background -->
-  <body id="accueil">
+  <body>
     <div id="container-page">
-        <div id="header">
-          <!-- remplacement des h1...par des span car il faut un titre par page. Les 3 mots sont modifiables avec l'id et la balise span -->
+        <!-- HEADER ----------------------------------------->
+        <div id="header">    
           <span id="tickethack">Tickethack</span>
-
           <div id="menu-right">
             <span id="cart">Cart</span>
             <span id="bookings">Bookings</span>
           </div>
         </div>
-        <!-- TITLE avec les titres -->
+        <!-- TITLE avec les titres --------------------------->
         <div id="title">
           <h1>Explore the world effortlessly by train!</h1>
           <h3>Compare, book and enjoy cheap prices for train tickets: your journey starts on Tickethack.</h3>
         </div>
         <!-- CONTENT LEFT avec le CALENDRIER -->
         <div id="content-left" class="col-4">
-            <input id="cityNameInput" type="text" placeholder="Departure" />
-            <input id="cityNameInput" type="text" placeholder="Arrival" />
-            <input id="travelDay" type="date"  name="travelDay" />
-            <button type="button" id="btn-search" class="btn btn-success">Search</button>
+          <div id="'departArrival">
+            <input id="cityNameInputD" type="text" placeholder="Departure" />
+            <input id="cityNameInputA" type="text" placeholder="Arrival" />
+          </div>
+          <input id="travelDay" type="date"  name="travelDay" />
+          <button type="button" id="btn-search" class="btn btn-success">Search</button>
         </div>
 
         <!-- CONTENT RIGHT avec les IMAGES ou les TRAJETS -->
