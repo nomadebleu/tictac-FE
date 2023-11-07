@@ -100,6 +100,9 @@ h3 {
 #no-book-container {
   display: none;
 }
+#anyvoyage {
+  display: none;
+}
 .trip {
   background-color: #f6eeef;
   border-radius: 5px;
@@ -131,4 +134,7 @@ h3 {
   justify-content: space-around;
   align-items: center;
   margin: 0px;
+}
+.line {
+  display: center;
 }

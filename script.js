@@ -48,7 +48,7 @@ for (let i = 0; i < document.querySelectorAll('.deleteTrip').length; i++) {
 	document.querySelectorAll('.deleteTrip')[i].addEventListener('click', function () {
 	this.parentNode.remove();
 	bookings = document.querySelectorAll('.trip')
-	total -=  
-	});
+	
+});
 }
 	
