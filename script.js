@@ -1,6 +1,6 @@
-//--------------Création des trajets dans book-container
+//--------------Création des trajets dans BOOK-CONTAINER sur l'ACCUEIL
 
-let bookings = [];//C'est le panier des trajet
+let bookings = [];//C'est le panier des trajets
 let total;//Montant total des trajets
 
 document.querySelector('#btn-search').addEventListener('click', function () {
@@ -44,13 +44,29 @@ document.querySelector('#btn-search').addEventListener('click', function () {
 		})
 });
 
-//--------------Supprimer un TRAJET de son cart
+//--------------Supprimer un TRAJET de son CART
 //Sur chaque trajet, j'ajoute une écoute.Au clic, cela l'enlève et met à jour le total des bookings
 for (let i = 0; i < document.querySelectorAll('.deleteTrip').length; i++) {
 	document.querySelectorAll('.deleteTrip')[i].addEventListener('click', function () {
 	this.parentNode.remove();
-	bookings = document.querySelectorAll('.trip')
+	bookings = document.querySelectorAll('.trip');
 	
 });
 }
-	
+//--------------Calcul du temps restant avant le départ
+
+//Il faut récupérer ou connecter timeD avec les données
+const timeD = "2023-11-08T06:27:46.071Z"
+//Conversion pour récuperer l'heure
+const timeDepart = moment(timeD).format('HH:mm')
+
+//Génération de la date actuelle avec conversion pour avoir l'heure
+const dateNew = new Date();
+const dateActuelle = moment(dateNew).format('HH:mm')
+
+//Calcul de la durée avec moment & conversion des min.en H+m
+const duree = moment(dateNew).diff(moment(timeD), 'minutes');
+const dureeHeures = Math.floor(duree / 60);
+const dureeMinutes = duree % 60;
+//Il faut injecter le résultat dans le FE
+console.log(`Departure in ${dureeHeures}h ${dureeMinutes}min.`);

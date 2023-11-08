@@ -166,7 +166,7 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: stretch;
+  align-items:stretch;
 }
 #checkout-summary {
   background-color: #01153f;
@@ -178,7 +178,6 @@ input {
 }
 .btn btn-success, #total-title {
   padding: 10px;
-
 }
 
 .line {
