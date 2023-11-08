@@ -1,4 +1,5 @@
-body {
+/*-------------PAGE ACCUEIL------------------------------*/
+#accueil {
   height: 100vh;
   width: 100vw;
   background-image:url("./images/background.jpg");
@@ -6,17 +7,23 @@ body {
   background-size: cover;
   margin:0;
 }
+#accueilCart, #accueilBookings {
+  height: 100vh;
+  width: 100vw;
+  background-color:#F2F3F3 ;
+  margin:0;
+}
+/*-------------LIENS HEADER------------------------------*/
 #tickethack, #cart, #bookings {
   text-decoration: none;
 }
+/*-------------CONTAINER GRID------------------------------*/
 #container-page {
   display: grid;
   grid-template-rows: repeat(9, 1fr);
   grid-template-columns: repeat(13, 1fr);
 }
-#accueil {
-  background-image: url("images/background.jpg");
-}
+/*-------------HEADER avec LIENS---------------------------*/
 #header {
   grid-row-start: 1;
   grid-row-end: 2;
@@ -42,6 +49,7 @@ body {
   color: black;
   font-size: 20px;
 }
+/*----------TITLES page d'ACCUEIL PRINCIPALE------*/
 #title {
   grid-row-start: 2;
   grid-row-end: 4;
@@ -76,7 +84,7 @@ h3 {
 
   background-color: white;
   background-size: cover;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 #departArrival {
   display:flex;
@@ -129,20 +137,14 @@ input {
   flex-direction: column;
   overflow: scroll;
 }
+/*-------------LES BLOCS INVISIBLES---------------------------*/
 #no-book-container {
   display: none;
 }
-#footer {
-  grid-row-start: 9;
-  grid-row-end: 10;
-  grid-column-start: 1;
-  grid-column-end: 14;
-}
-
-
 #anyvoyage {
   display: none;
 }
+/*-------------LES BLOCS page CART & BOOKINGS---------------------------*/
 .trip {
   background-color: #f6eeef;
   border-radius: 5px;
@@ -152,7 +154,6 @@ input {
   align-items: center;
   margin: 10px;
 }
-
 .result-content {
   grid-row-start: 4;
   grid-row-end: 9;
@@ -164,17 +165,29 @@ input {
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: stretch;
 }
-.checkout-summary {
+#checkout-summary {
   background-color: #01153f;
   color: white;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  margin: 0px;
+  border-radius: 0px 0px 10px 10px;
 }
+.btn btn-success, #total-title {
+  padding: 10px;
+
+}
+
 .line {
   display: center;
+}
+/*------------- FOOTER ---------------------------*/
+#footer {
+  grid-row-start: 9;
+  grid-row-end: 10;
+  grid-column-start: 1;
+  grid-column-end: 14;
 }
