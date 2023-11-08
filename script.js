@@ -38,10 +38,9 @@ document.querySelector('#btn-search').addEventListener('click', function () {
 					  <p id="time">${timeValue}</p>
 					</div>
 					<div>
-					<p id="price">${trajet.price}</p>
+					<p id="price">${trajet.price}€</p>
 					</div>
 					<button type="button" class="book btn btn-success">BOOK</button>
-					<button type="button" id="delete" class="btn btn-success">X</button>
 						`;
 					//on fait le total des prix des différents trajets avec la méthode reduce((acc,e)=>{},départ)
 					total = bookings.reduce((cumul, trajet) => cumul + trajet.price, 0);
@@ -57,7 +56,25 @@ document.querySelector('#btn-search').addEventListener('click', function () {
 for (let i=0; i < document.querySelectorAll('.trip').length; i++) {
 	document.querySelectorAll('.trip')[i].addEventListener('click', function(){
 	  this.parentNode.remove();
-	  document.querySelector('#count').textContent --;
+	  document.querySelector('#book-container-cart').innerHTML += `
+					<div class ="trip">
+					<div>
+					  <p id="departure">${trajet.departure}</p>
+					</div>
+					<div>
+					  <p>></p>
+					</div>
+					<div>
+					  <p id="arrival">${trajet.arrival}</p>
+					</div>
+					<div>
+					  <p id="time">${timeValue}</p>
+					</div>
+					<div>
+					<p id="price">${trajet.price}€</p>
+					</div>
+	  				<button type="button" id="delete" class="btn btn-success">X</button>
+					`
 	});
 	} 
    
