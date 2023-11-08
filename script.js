@@ -1,4 +1,3 @@
-console.log('ok')
 //--------------Création des trajets dans book-container
 
 let bookings = [];//C'est le panier des trajet
