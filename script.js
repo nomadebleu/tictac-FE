@@ -1,4 +1,3 @@
-//console.log(moment(new Date()).format('YYYY-MM-DD'))
 //--------------Création des trajets dans BOOK-CONTAINER sur l'ACCUEIL
 
 let bookings = [];//C'est le panier des trajets
@@ -44,19 +43,33 @@ document.querySelector('#btn-search').addEventListener('click', function () {
 					<button type="button" class="book btn btn-success">BOOK</button>
 					<button type="button" id="delete" class="btn btn-success">X</button>
 						`;
-					console.log(bookings.push(trajet));
 					//on fait le total des prix des différents trajets avec la méthode reduce((acc,e)=>{},départ)
 					total = bookings.reduce((cumul, trajet) => cumul + trajet.price, 0);
 					console.log(total)
 				})
-				
 			}else {
 				console.log('Pas de trajet')
 			}
 		})
 });
+//------------------Selection des trajets via le bouton BOOK dans l'accueil---------
 
-//--------------Supprimer un TRAJET de son CART
+for (let i=0; i < document.querySelectorAll('.trip').length; i++) {
+	document.querySelectorAll('.trip')[i].addEventListener('click', function(){
+	  this.parentNode.remove();
+	  document.querySelector('#count').textContent --;
+	});
+	} 
+   
+
+
+
+
+
+
+
+
+	//--------------Supprimer un TRAJET de son CART
 //Sur chaque trajet, j'ajoute une écoute.Au clic, cela l'enlève et met à jour le total des bookings
 for (let i = 0; i < document.querySelectorAll('.deleteTrip').length; i++) {
 	document.querySelectorAll('.deleteTrip')[i].addEventListener('click', function () {
