@@ -32,6 +32,7 @@ document.querySelector('#btn-search').addEventListener('click', function () {
 					<p id="price">${trajet.price}</p>
 					</div>
 					<button type="button" class="book btn btn-success">BOOK</button>
+					<button type="button" id="delete" class="btn btn-success">X</button>
 						`;
 					bookings.push(trajet);
 					//on fait le total des prix des différents trajets avec la méthode reduce((acc,e)=>{},départ)
