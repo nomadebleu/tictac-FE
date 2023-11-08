@@ -138,9 +138,7 @@ input {
   overflow: scroll;
 }
 /*-------------LES BLOCS INVISIBLES---------------------------*/
-#no-book-container {
-  display: none;
-}
+
 #anyvoyage {
   display: none;
 }
