@@ -43,7 +43,7 @@ document.querySelector('#btn-search').addEventListener('click', function () {
 					</div>
 					<button type="button" class="book btn btn-success">BOOK</button>
 						`;
-					document.querySelector('#id_à_avoir').style.display = 'none';
+					document.querySelector('.img-content-right').style.display = 'none';
 					//on fait le total des prix des différents trajets avec la méthode reduce((acc,e)=>{},départ)
 					total = bookings.reduce((cumul, trajet) => cumul + trajet.price, 0);
 					console.log(total)
