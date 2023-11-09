@@ -152,9 +152,15 @@ input {
 #no-book-container {
   display: none;
 }
-#anyvoyage {
+#book-container-cart {
   display: none;
 }
+#anyvoyage-cart ,#anyvoyage-booking {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /*-------------LES BLOCS page CART & BOOKINGS---------------------------*/
 .trip {
   background-color: #f6eeef;
