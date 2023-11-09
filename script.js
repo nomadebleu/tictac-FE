@@ -3,6 +3,7 @@
 let bookings = [];//C'est le panier des trajets
 let total;//Montant total des trajets
 
+
 document.querySelector('#btn-search').addEventListener('click', function () {
 	fetch('http://localhost:3000/mycart',{
 		method:'POST',
@@ -42,6 +43,7 @@ document.querySelector('#btn-search').addEventListener('click', function () {
 					</div>
 					<button type="button" class="book btn btn-success">BOOK</button>
 						`;
+					document.querySelector('#id_à_avoir').style.display = 'none';
 					//on fait le total des prix des différents trajets avec la méthode reduce((acc,e)=>{},départ)
 					total = bookings.reduce((cumul, trajet) => cumul + trajet.price, 0);
 					console.log(total)
@@ -75,6 +77,7 @@ for (let i=0; i < document.querySelectorAll('.trip').length; i++) {
 					</div>
 	  				<button type="button" id="delete" class="btn btn-success">X</button>
 					`
+
 	});
 	} 
    
