@@ -110,20 +110,36 @@ input {
 .btn-search {
   color: 469e86;
 }
+.imgtrain {
+  width: 50%;
+  height: 50%;
+}
 /*-----BLOCK RIGHT-----------------------*/
 #content-right {
   grid-row-start: 5;
   grid-row-end: 8;
   grid-column-start: 8;
   grid-column-end: 12;
-  justify-content: column;
-  align-items: stretch;
+
   width: 80%;
   height: 100%;
   margin: 30px;
-
+  position: relative;
   background-color: white;
   border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.img-content-right {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
 }
 #book-container {
   margin: 20px;
