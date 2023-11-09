@@ -1,25 +1,36 @@
-// CART Affiche le trajet avec DELETE
-document.querySelector('#book-container-cart').innerHTML += `
-    <div class="trip">
-        <div>
-            <p id="departure">${selectedTrajet.departure}</p>
-        </div>
-        <div>
-            <p>></p>
-        </div>
-        <div>
-            <p id="arrival">${selectedTrajet.arrival}</p>
-        </div>
-        <div>
-            <p id="time">${timeValue}</p>
-        </div>
-        <div>
-            <p id="price">${selectedTrajet.price}€</p>
-        </div>
-        <button type="button" id="delete" class="btn btn-success">X</button>
-    </div>
-`;
-    
+// Récupére les carts stockés en db
+fetch('http://localhost:3000/mycartBook')
+        .then (response => response.json())
+        .then(carts => {
+            if (data.result) {
+                // Rajout de l'index pour identifier chaque trajet
+                data.carts.forEach((cart,index) => {
+                    const dateValue = cart.date;
+                    const timeValue = moment(dateValue).format('HH:mm');
+            
+                      
+                    document.querySelector('#book-container-cart').innerHTML += `
+                        <div class="trip" id="trip-${index}">
+                            <div>
+                                <p id="departure">${cart.departure}</p>
+                            </div>
+                            <div>
+                                <p>></p>
+                            </div>
+                            <div>
+                                <p id="arrival">${cart.arrival}</p>
+                            </div>
+                            <div>
+                                <p id="time">${timeValue}</p>
+                            </div>
+                            <div>
+                                <p id="price">${cart.price}€</p>
+                            </div>
+                            <button type="button" id="delete" class="btn btn-success">X</button>
+                        </div>
+                    `;
+            }
+        });  
 
 
     //CART:INJECTION du TITRE & CHECKOUT

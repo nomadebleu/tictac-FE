@@ -68,19 +68,36 @@ function addEventListenersToBookButtons() {
     bookButtons.forEach((button, index) => {
         button.addEventListener('click', function () {
             const selectedTrajet = searchData.trip[index];
-            console.log(selectedTrajet);
 
             // Conversion de la date
             const dateObject = new Date(selectedTrajet.date);
 
             // Utilisation de toISOString pour formater la date pour l'intégrer à l'URL
             const timeValue = dateObject.toISOString();
-            console.log(timeValue);
-
+            
+            //Suppression du bloc trip du bouton cliqué
             button.parentNode.remove();
 
-            //Envoie les éléments dans la page cart.html
-            window.location.href = `cart.html?departure=${selectedTrajet.departure}&arrival=${selectedTrajet.arrival}&time=${timeValue}&price=${selectedTrajet.price}`;
+            //Création d'un newCart en db
+            fetch('http://localhost:3000/mycart',{
+                method:'POST',
+                headers:{'Content-Type':'application/json'},
+                body:JSON.stringify({
+                    departure: selectedTrajet.departure,
+                    arrival: selectedTrajet.arrival,
+                    date:dateObject,
+                    time:timeValue,
+                    price:selectedTrajet.price
+                })
+            })
+            .then (response => response.json())
+            .then (newData => {
+                console.log(newData)
+                //Redirection vers cart.html
+            window.location.href = 'cart.html';
+            })
+
+            
         });
     });
 }
