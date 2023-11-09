@@ -122,18 +122,17 @@ input {
   background-color: white;
   border-radius: 20px;
 
-  display: flex;
+  display: inline-flex;
+  position: relative;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  text-align: center;
 }
+
 .img-content-right {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
+  padding: 45px;
+  align-self: auto;
 }
 #book-container {
   margin: 20px;

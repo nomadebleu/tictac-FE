@@ -43,20 +43,6 @@
   color: black;
   font-size: 20px;
 }
-.result-content {
-  grid-row-start: 4;
-  grid-row-end: 9;
-  grid-column-start: 3;
-  grid-column-end: 12;
-  width: 45vw;
-  margin: 30px;
-  background-color: white;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
-}
 #anyvoyage-cart {
   display: flex;
   flex-direction: column;
@@ -83,8 +69,10 @@
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 15px;
 }
 #anyvoyage-booking {
   display: flex;
