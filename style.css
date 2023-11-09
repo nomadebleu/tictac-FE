@@ -102,20 +102,10 @@ input {
   background-color: #f6eeef;
   width: 100%;
 }
-#cityNameInputA {
-  border-top: solid rgb(197, 197, 197) 0.5px;
-  border-bottom: solid white 1px;
-  border-left: solid white 1px;
-  border-right: solid white 1px;
-}
-#cityNameInputD {
-  border-top: solid white 1px;
-  border-bottom: solid rgb(197, 197, 197) 0.5px;
-  border-left: solid white 1px;
-  border-right: solid white 1px;
-}
-#travelDay {
-  background-color: #f6eeef;
+.input {
+  border: 2px solid grey;
+  border-radius: 5px;
+  background-color: #f0f1f2;
 }
 .btn-search {
   color: 469e86;
