@@ -152,9 +152,7 @@ input {
 #no-book-container {
   display: none;
 }
-#book-container-cart {
-  display: none;
-}
+
 #anyvoyage-cart ,#anyvoyage-booking {
   display: flex;
   flex-direction: column;
