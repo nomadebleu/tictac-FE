@@ -10,61 +10,77 @@
       crossorigin="anonymous"
     />
     <title>TicketHack</title>
-    <script type = "text/JavaScript" src = " https://MomentJS.com/downloads/moment.js"></script>
+    <script
+      type="text/JavaScript"
+      src=" https://MomentJS.com/downloads/moment.js"
+    ></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body id="accueil">
     <div id="container-page">
-        <!-- HEADER ----------------------------------------->
-        <div id="header">    
-          <a href="./index.html" id="tickethack">Tickethack</a>
-          <div id="menu-right">
-            <a href='./cart.html'id="cart">Cart</a>
-            <a href='./bookings.html'id="bookings">Bookings</a>
+      <!-- HEADER ----------------------------------------->
+      <div id="header">
+        <a href="./index.html" id="tickethack">Tickethack</a>
+        <div id="menu-right">
+          <a href="./cart.html" id="cart">Cart</a>
+          <a href="./bookings.html" id="bookings">Bookings</a>
+        </div>
+      </div>
+      <!-- TITLE avec les titres --------------------------->
+      <div id="title">
+        <h1>Explore the world effortlessly by train!</h1>
+        <h3>
+          Compare, book and enjoy cheap prices for train tickets: your journey
+          starts on Tickethack.
+        </h3>
+      </div>
+      <!-- CONTENT LEFT avec le CALENDRIER -->
+      <div id="content-left">
+        <div id="'departArrival">
+          <input
+            id="cityNameInputD"
+            type="text"
+            placeholder="Departure"
+            class="input"
+          />
+          <input
+            id="cityNameInputA"
+            type="text"
+            placeholder="Arrival"
+            class="input"
+          />
+        </div>
+        <input id="travelDay" type="date" name="travelDay" class="input" />
+        <button type="button" id="btn-search" class="btn btn-success">
+          Search
+        </button>
+      </div>
+
+      <!-- CONTENT RIGHT avec les IMAGES ou les TRAJETS -->
+      <div id="content-right">
+        <!-- LES IMAGES & MESSAGES -->
+        <div id="img-accueil" class="img-content-right">
+          <div class="image-top">
+            <img class="imgtrain" src="images/train.png" />
+            <hr class="line" style="width: 60%" />
+          </div>
+          <div class="text-bottom">
+            <p>It's time to book your future trip</p>
           </div>
         </div>
-        <!-- TITLE avec les titres --------------------------->
-        <div id="title">
-          <h1>Explore the world effortlessly by train!</h1>
-          <h3>Compare, book and enjoy cheap prices for train tickets: your journey starts on Tickethack.</h3>
-        </div>
-        <!-- CONTENT LEFT avec le CALENDRIER -->
-        <div id="content-left" class="col-4">
-          <div id="'departArrival">
-            <input id="cityNameInputD" type="text" placeholder="Departure" />
-            <input id="cityNameInputA" type="text" placeholder="Arrival" />
+        <!-- BLOC IMAGE NO TRIP FOUND -->
+        <div id="no-book-container" class="img-content-right">
+          <div class="image-top">
+            <img class="imgtrain" src="images/notfound.png" />
           </div>
-          <input id="travelDay" type="date"  name="travelDay" />
-          <button type="button" id="btn-search" class="btn btn-success">Search</button>
+          <div class="text-bottom">
+            <p>No trip found.</p>
+          </div>
         </div>
-
-        <!-- CONTENT RIGHT avec les IMAGES ou les TRAJETS -->
-        <div id="content-right" class="col-4">
-            <!-- LES IMAGES & MESSAGES -->
-            <div id="no-book-container">
-                <div class="image-top">
-                  <img class="imgtrain" src="images/train.png" />
-                </div>
-                <div class="text-bottom">
-                  <p>It's time to book your future trip</p>
-                </div>
-                <div class="image-top">
-                  <img class="imgtrain" src="images/notfound.png" />
-                </div>
-                <div class="text-bottom">
-                  <p>No trip found.</p>
-                </div>
-              </div>
-            <!-- LES TRAJETS -->
-            <div id="book-container">
-                <!-- BLOC VOYAGE -->
-                <!-- Vide car se remplit avec la recherche -->
-                <!-- FIN BLOC VOYAGE -->
-            </div>
-
-            <div id="footer"></div>
-
-    </div><!--fin container-page--> 
+      </div>
+      <div id="footer"></div>
+    </div>
+    <!--fin container-page-->
     <script src="script.js"></script>
   </body>
 </html>
