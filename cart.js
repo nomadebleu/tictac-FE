@@ -2,19 +2,19 @@
 document.querySelector('#book-container-cart').innerHTML += `
     <div class="trip">
         <div>
-            <p id="departure">k</p>
+            <p id="departure">${selectedTrajet.departure}</p>
         </div>
         <div>
             <p>></p>
         </div>
         <div>
-            <p id="arrival">k</p>
+            <p id="arrival">${selectedTrajet.arrival}</p>
         </div>
         <div>
-            <p id="time">k</p>
+            <p id="time">${timeValue}</p>
         </div>
         <div>
-            <p id="price">k€</p>
+            <p id="price">${selectedTrajet.price}€</p>
         </div>
         <button type="button" id="delete" class="btn btn-success">X</button>
     </div>

@@ -78,6 +78,8 @@ function addEventListenersToBookButtons() {
             console.log(timeValue);
 
             button.parentNode.remove();
+
+            //Envoie les éléments dans la page cart.html
             window.location.href = `cart.html?departure=${selectedTrajet.departure}&arrival=${selectedTrajet.arrival}&time=${timeValue}&price=${selectedTrajet.price}`;
         });
     });
