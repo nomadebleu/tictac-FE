@@ -9,13 +9,6 @@
   margin: 0;
   background-attachment: fixed;
 }
-#accueilCart,
-#accueilBookings {
-  height: 100vh;
-  width: 100vw;
-  background-color: #f2f3f3;
-  margin: 0;
-}
 /*-------------LIENS HEADER------------------------------*/
 #tickethack,
 #cart,
@@ -152,13 +145,6 @@ input {
 #no-book-container {
   display: none;
 }
-
-#anyvoyage-cart ,#anyvoyage-booking {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 /*-------------LES BLOCS page CART & BOOKINGS---------------------------*/
 .trip {
   background-color: #f6eeef;
@@ -168,29 +154,6 @@ input {
   justify-content: space-around;
   align-items: center;
   margin: 10px;
-}
-.result-content {
-  grid-row-start: 4;
-  grid-row-end: 9;
-  grid-column-start: 3;
-  grid-column-end: 12;
-  width: 45vw;
-  margin: 30px;
-  background-color: white;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
-}
-#checkout-summary {
-  background-color: #01153f;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  padding: 5px;
-  align-items: center;
-  border-radius: 0px 0px 10px 10px;
 }
 .btn btn-success,
 #total-title {
@@ -206,14 +169,4 @@ input {
   grid-row-end: 10;
   grid-column-start: 1;
   grid-column-end: 14;
-}
-.title-result-content {
-  text-align: center;
-  font-size: 18px;
-  font-weight: bold;
-}
-.pub {
-  text-align: center;
-  color: #4fa890;
-  font-weight: bold;
 }
