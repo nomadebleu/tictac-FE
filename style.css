@@ -141,9 +141,6 @@ input {
   flex-direction: column;
 }
 /*-------------LES BLOCS INVISIBLES---------------------------*/
-#no-book-container {
-  display: none;
-}
 /*-------------LES BLOCS TRIP---------------------------*/
 .trip {
   background-color: #f6eeef;

@@ -59,6 +59,18 @@ document.querySelector("#btn-search").addEventListener("click", function () {
         addEventListenersToBookButtons();
       } else {
         console.log("Pas de trajet");
+        document.querySelector("#content-trip").innerHTML += `
+				<div id="no-book-container" class="img-content-right">
+            <div class="image-top">
+              <img class="imgtrain" src="images/notfound.png" />
+            </div>
+
+            <div class="text-bottom">
+              <p>No trip found.</p>
+            </div>
+          </div>
+				`;
+        document.querySelector("#img-accueil").style.display = "none";
       }
     });
 });
