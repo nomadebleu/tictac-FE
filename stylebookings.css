@@ -69,8 +69,10 @@
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 15px;
 }
 #anyvoyage-booking {
   display: flex;

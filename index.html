@@ -10,7 +10,10 @@
       crossorigin="anonymous"
     />
     <title>TicketHack</title>
-    <script type="text/JavaScript"src=" https://MomentJS.com/downloads/moment.js"></script>
+    <script
+      type="text/JavaScript"
+      src=" https://MomentJS.com/downloads/moment.js"
+    ></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body id="accueil">
@@ -56,38 +59,28 @@
       <!-- CONTENT RIGHT avec les IMAGES ou les TRAJETS -->
       <div id="content-right">
         <!-- IMAGE & MESS / TRAIN -->
-        <div id="img-accueil" class="img-content-right">
-          
-          <div class="image-top">
-            <img class="imgtrain" src="images/train.png" />
-            <hr class="line" style="width: 60%" />
+        <div id="content-trip">
+          <div id="img-accueil" class="img-content-right">
+            <div class="image-top">
+              <img class="imgtrain" src="images/train.png" />
+              <hr class="line" style="width: 60%" />
+            </div>
+            <div class="text-bottom">
+              <p>It's time to book your future trip</p>
+            </div>
           </div>
 
-          <div class="text-bottom">
-            <p>It's time to book your future trip</p>
+          <!-- IMAGE & MESS / NO TRIP FOUND -->
+          <div id="no-book-container" class="img-content-right">
+            <div class="image-top">
+              <img class="imgtrain" src="images/notfound.png" />
+            </div>
+
+            <div class="text-bottom">
+              <p>No trip found.</p>
+            </div>
           </div>
-          
         </div>
-
-        <!-- IMAGE & MESS / NO TRIP FOUND -->
-        <div id="no-book-container" class="img-content-right">
-
-          <div class="image-top">
-            <img class="imgtrain" src="images/notfound.png" />
-          </div>
-
-          <div class="text-bottom">
-            <p>No trip found.</p>
-          </div>
-
-        </div>
-
-        <div id="book-container">
-          <!-- BLOC VOYAGE -->
-          <!-- Vide car se remplit avec la recherche -->
-          <!-- FIN BLOC VOYAGE -->
-        </div>
-
       </div>
       <div id="footer"></div>
     </div>
