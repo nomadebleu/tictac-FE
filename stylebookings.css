@@ -5,11 +5,6 @@
   background-color: #f2f3f3;
   margin: 0;
 }
-#container-page {
-  display: grid;
-  grid-template-rows: repeat(9, 1fr);
-  grid-template-columns: repeat(13, 1fr);
-}
 /*-------------LIENS HEADER------------------------------*/
 #tickethack,
 #cart,
@@ -49,15 +44,7 @@
   font-size: 20px;
 }
 /*-------------BLOC IF NO BOOKING  ---------------------------*/
-.trip {
-  background-color: #f6eeef;
-  border-radius: 5px;
-  height: 50px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 10px;
-}
+#book-container-booking,
 .result-content {
   grid-row-start: 4;
   grid-row-end: 9;
@@ -74,20 +61,26 @@
   font-weight: bold;
   font-size: 15px;
 }
+
 #anyvoyage-booking {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.title-result-content {
+  justify-content: center;
 }
 /*-------------BLOC IF BOOKING  ---------------------------*/
 .trip {
   background-color: #f6eeef;
   border-radius: 5px;
   height: 50px;
+  width: 40vw;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin: 10px;
+  padding: 15px;
 }
 /*------------- FOOTER ---------------------------*/
 #footer {

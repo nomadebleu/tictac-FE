@@ -45,19 +45,15 @@
 }
 #anyvoyage-cart {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+.title-result-content {
+  justify-content: center;
 }
 /*-------------BLOC IF NO BOOKING IN CART  ---------------------------*/
-.trip {
-  background-color: #f6eeef;
-  border-radius: 5px;
-  height: 50px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 10px;
-}
 .result-content {
   grid-row-start: 4;
   grid-row-end: 9;
@@ -69,16 +65,27 @@
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   font-weight: bold;
   font-size: 15px;
 }
-#anyvoyage-booking {
+.title-result-content {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+/*-------------BLOC IF BOOKING IN CART  ---------------------------*/
+.trip {
+  background-color: #f6eeef;
+  border-radius: 5px;
+  height: 50px;
+  width: 40vw;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-} /*-------------BLOC IF BOOKING IN CART  ---------------------------*/
+  margin: 10px;
+  padding: 15px;
+}
 #checkout-summary {
   background-color: #01153f;
   color: white;
@@ -94,6 +101,10 @@
   grid-row-end: 10;
   grid-column-start: 1;
   grid-column-end: 14;
+}
+#checkout-summary {
+  width: 45vw;
+  justify-content: space-around;
 }
 /*------------- A VERIFIER  ---------------------------*/
 .btn btn-success,

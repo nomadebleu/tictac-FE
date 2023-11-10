@@ -1,22 +1,22 @@
 let panierCart = []; //C'est le panier des trajets
 let totalPrix; //Montant total des trajets
 let searchCart;
-document.querySelector('#anyvoyage-cart').style.display = "none"
-document.querySelector('#result-content-cart').innerHTML += `
-        <span class="title-result-content">My Cart</span>
-        `
-fetch('http://localhost:3000/mycartBook')
-	.then(response => response.json())
-	.then(data => {
-		searchCart = data;
-		data.allCarts.forEach((cart,index) => {
+fetch("http://localhost:3000/mycartBook")
+  .then((response) => response.json())
+  .then((data) => {
+    if (data.result) {
+      searchCart = data;
+      data.allCarts.forEach((cart, index) => {
+        //Conversion de 'time'
+        const dateValue = cart.date;
+        const timeValue = moment(dateValue).format("HH:mm");
 
-                    //Conversion de 'time'
-                    const dateValue = cart.date;
-                    const timeValue = moment(dateValue).format('HH:mm');
-            
-                    //Création des bookings
-                    document.querySelector('#book-container-cart').innerHTML += `
+        //Création des bookings
+        document.querySelector("#anyvoyage-cart").style.display = "none";
+        document.querySelector("#book-container-cart").innerHTML += `
+        <span class="title-result-content">My Cart</span>
+        `;
+        document.querySelector("#book-container-cart").innerHTML += `
                         <div class="trip" id="trip-${index}">
                             <div>
                                 <p id="departure">${cart.departure}</p>
@@ -33,57 +33,66 @@ fetch('http://localhost:3000/mycartBook')
                             <div>
                                 <p id="price">${cart.price}€</p>
                             </div>
-                            <button type="button" id="delete" class="btn btn-success">X</button>
+                            <button type="button" id="delete" class="btn-success">X</button>
                         </div>
-                    `;    
-                    //Push le trajet pour calculer ensuite le prix total
-                    panierCart.push(cart);
-                    // TOTAL l'ensemble des TRAJETS trouvés avec .reduce((acc,e)=>{},départ)
-                    totalPrix = panierCart.reduce((cumul, cart) => cumul + cart.price, 0);
-                    console.log(panierCart, totalPrix);        
-            })
-                    document.querySelector('#result-content-cart').innerHTML += `
+                    `;
+        //Push le trajet pour calculer ensuite le prix total
+        panierCart.push(cart);
+        // TOTAL l'ensemble des TRAJETS trouvés avec .reduce((acc,e)=>{},départ)
+        totalPrix = panierCart.reduce((cumul, cart) => cumul + cart.price, 0);
+        console.log(panierCart, totalPrix);
+      });
+      document.querySelector("#result-content-cart").innerHTML += `
                         <div id="checkout-summary">
-                            <p id="total-title">Total:<span id="total-amount">${totalPrix}€</span></p>
+                            <p id="total-title">Total:     <span id="total-amount"> ${totalPrix} €</span></p>
                             <button type="button" id="purchase" class="btn btn-success">Purchase</button>
                         </div>
-                    `  
-                    //Click sur DELETE pour supprimer un cart
-                    addEventListenersToDeleteButtons()
+                    `;
+    } else {
+      console.log("Notickets in your cart");
+    }
+    //Click sur DELETE pour supprimer un cart
+    addEventListenersToDeleteButtons();
 
-                    //Click sur logo PURCHASE pour envoyé le CART dans la collection BOOKINGS
-                    document.querySelector("#purchase").addEventListener("click", function () {
-                    window.location.href = 'bookings.html'
-                    })
-        });  
+    //Click sur logo PURCHASE pour envoyé le CART dans la collection BOOKINGS
+    document.querySelector("#purchase").addEventListener("click", function () {
+      window.location.href = "bookings.html";
+    });
+  });
 
 // Ajout de l'écoute sur les boutons DELETE
 function addEventListenersToDeleteButtons() {
-    const deleteButtons = document.querySelectorAll(".btn-success");
-  
-      deleteButtons.forEach((button, index) => {
-          button.addEventListener('click', function () {
-              const selectedCart = searchCart.carts[index];
+  const deleteButtons = document.querySelectorAll(".btn-success");
 
-              //Suppression du Cart selectionné
-            fetch(`http://localhost:3000/mycartBook/${index}`,{
-                method:'DELETE'})
-                .then (response => response.json())
-                .then (deleteTrajet => 
-                    console.log('Cart deleted:'+ deleteTrajet))    
-            })
-        });
+  deleteButtons.forEach((button, index) => {
+    button.addEventListener("click", function () {
+      const selectedCart = searchCart.carts[index];
+
+      //Suppression du Cart selectionné
+      fetch(`http://localhost:3000/mycartBook/${index}`, {
+        method: "DELETE",
+      })
+        .then((response) => response.json())
+        .then((deleteTrajet) => console.log("Cart deleted:" + deleteTrajet));
+    });
+  });
 }
-            
+/*for (i = 0; i < document.querySelectorAll(".btn-success").length; i++) {
+  document
+    .querySelectorAll(".btn-success")
+    [i].addEventListener("click", function () {
+      this.parentNode.remove();
+      //const selectedCart = searchCart.carts[i];
+      //Suppression du Cart selectionné
+      fetch(`http://localhost:3000/mycartBook/${[i]}`, {
+        method: "DELETE",
+      })
+        .then((response) => response.json())
+        .then((deleteTrajet) => console.log("Cart deleted:" + deleteTrajet));
+    });
+}*/
+
 //Click sur logo Tickethack pour revenir à l'accueil avec les trajets - celui booké
 document.querySelector("#tickethack").addEventListener("click", function () {
-    window.location.href = 'index.html'
+  window.location.href = "index.html";
 });
-
-
-
-
-
-
-
-    
