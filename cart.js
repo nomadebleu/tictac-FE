@@ -1,14 +1,20 @@
-// Récupére les carts stockés en db
+let panierCart = []; //C'est le panier des trajets
+let totalPrix; //Montant total des trajets
+document.querySelector('#anyvoyage-cart').style.display = "none"
+document.querySelector('#result-content-cart').innerHTML += `
+        <span class="title-result-content">My Cart</span>
+        `
 fetch('http://localhost:3000/mycartBook')
-        .then (response => response.json())
-        .then(carts => {
-            if (data.result) {
-                // Rajout de l'index pour identifier chaque trajet
-                data.carts.forEach((cart,index) => {
+	.then(response => response.json())
+	.then(data => {
+		console.log(data)
+		data.allCarts.forEach((cart,index) => {
+
+                    //Conversion de 'time'
                     const dateValue = cart.date;
                     const timeValue = moment(dateValue).format('HH:mm');
             
-                      
+                    //Création des bookings
                     document.querySelector('#book-container-cart').innerHTML += `
                         <div class="trip" id="trip-${index}">
                             <div>
@@ -29,24 +35,21 @@ fetch('http://localhost:3000/mycartBook')
                             <button type="button" id="delete" class="btn btn-success">X</button>
                         </div>
                     `;
-            });
-        };  
-    });
-    //CART:INJECTION du TITRE & CHECKOUT
-    document.querySelector('#result-content-cart').innerHTML += `
-        <span class="title-result-content">My Cart</span>
+                    //Push le trajet pour calculer ensuite le prix total
+                    panierCart.push(cart);
+                    // TOTAL l'ensemble des TRAJETS trouvés avec .reduce((acc,e)=>{},départ)
+                    totalPrix = panierCart.reduce((cumul, cart) => cumul + cart.price, 0);
+                    console.log(panierCart, totalPrix);
+            })
+                    document.querySelector('#result-content-cart').innerHTML += `
+                        <div id="checkout-summary">
+                            <p id="total-title">Total:<span id="total-amount">${totalPrix}€</span></p>
+                            <button type="button" id="purchase" class="btn btn-success">Purchase</button>
+                        </div>
+                    `
+        });  
+ 
+    
+    
         
-        <div id="checkout-summary">
-            <p id="total-title">Total:<span id="total-amount">103€</span></p>
-            <button type="button" id="purchase" class="btn btn-success">Purchase</button>
-        </div>
-    `;
-//--------------Supprimer un TRAJET de son CART
-//Sur chaque trajet, j'ajoute une écoute.Au clic, cela l'enlève et met à jour le total des bookings
-for (let i = 0; i < document.querySelectorAll('.deleteTrip').length; i++) {
-	document.querySelectorAll('.deleteTrip')[i].addEventListener('click', function () {
-	this.parentNode.remove();
-	bookings = document.querySelectorAll('.trip');
-	
-});
-}
+       

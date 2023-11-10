@@ -1,6 +1,5 @@
 //Recherche des trajets ------------------------------------------------------------->
-let bookings = []; //C'est le panier des trajets
-let total; //Montant total des trajets
+
 let searchData; //On sort les data pour les réutiliser ensuite
 
 document.querySelector("#btn-search").addEventListener("click", function () {
@@ -48,11 +47,6 @@ document.querySelector("#btn-search").addEventListener("click", function () {
 
           // RETRAIT des IMAGES & MESS avec DISPLAY NONE
           document.querySelector(".img-content-right").style.display = "none";
-          //Push le trajet pour calculer ensuite le prix total
-          bookings.push(trajet);
-          // TOTAL l'ensemble des TRAJETS trouvés avec .reduce((acc,e)=>{},départ)
-          total = bookings.reduce((cumul, trajet) => cumul + trajet.price, 0);
-          console.log(bookings, total);
         });
 
         // Fonction pour ajouter des écouteurs à chaque trajet une fois qu'ils sont créés
