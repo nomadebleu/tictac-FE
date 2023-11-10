@@ -1,5 +1,5 @@
 //BOOKING injection VOYAGE avec DUREE avant départ & FOOTER
-document.querySelector('#book-container-cart').innerHTML += `
+document.querySelector('#book-container-booking').innerHTML += `
 	<div class ="trip">
 		<div>
   			<p id="departure">${trajet.departure}</p>

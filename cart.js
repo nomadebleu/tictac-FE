@@ -29,10 +29,9 @@ fetch('http://localhost:3000/mycartBook')
                             <button type="button" id="delete" class="btn btn-success">X</button>
                         </div>
                     `;
-            }
-        });  
-
-
+            });
+        };  
+    });
     //CART:INJECTION du TITRE & CHECKOUT
     document.querySelector('#result-content-cart').innerHTML += `
         <span class="title-result-content">My Cart</span>
