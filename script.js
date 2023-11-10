@@ -1,7 +1,6 @@
 //Recherche des trajets ------------------------------------------------------------->
-
-let searchData; //On sort les data pour les réutiliser ensuite
-
+//Click SEARCH
+let searchData; //permet récupérer les trajets pour après
 document.querySelector("#btn-search").addEventListener("click", function () {
   fetch("http://localhost:3000/mycart", {
     method: "POST",
@@ -16,8 +15,10 @@ document.querySelector("#btn-search").addEventListener("click", function () {
   })
     .then((response) => response.json())
     .then((data) => {
-      searchData = data;
+    
       if (data.result) {
+        searchData = data;
+        console.log(searchData)
         // Rajout de l'index pour identifier chaque trajet
         data.trip.forEach((trajet, index) => {
           const dateValue = trajet.date;
@@ -51,13 +52,14 @@ document.querySelector("#btn-search").addEventListener("click", function () {
 
         // Fonction pour ajouter des écouteurs à chaque trajet une fois qu'ils sont créés
         addEventListenersToBookButtons();
+
       } else {
         console.log("Pas de trajet");
       }
     });
 });
 
-// Fonction pour ajouter les écouteurs au bouton BOOK de chaque trajet
+// Ajout de l'écoute sur les boutons BOOK
 function addEventListenersToBookButtons() {
   const bookButtons = document.querySelectorAll(".btn-success");
 
@@ -65,35 +67,47 @@ function addEventListenersToBookButtons() {
         button.addEventListener('click', function () {
             const selectedTrajet = searchData.trip[index];
 
-      // Conversion de la date
-      const dateObject = new Date(selectedTrajet.date);
+            // Conversion de la date
+            //const dateObject = new Date(selectedTrajet.date);
 
             // Utilisation de toISOString pour formater la date pour l'intégrer à l'URL
-            const timeValue = dateObject.toISOString();
+            //const timeValue = dateObject.toISOString();
             
-            //Suppression du bloc trip du bouton cliqué
-            button.parentNode.remove();
-
-            //Création d'un newCart en db
-            fetch('http://localhost:3000/mycart',{
+            //Ajout du selectedTrajet à la collection CARTS
+            fetch('http://localhost:3000/mycartBook',{
                 method:'POST',
                 headers:{'Content-Type':'application/json'},
                 body:JSON.stringify({
                     departure: selectedTrajet.departure,
                     arrival: selectedTrajet.arrival,
-                    date:dateObject,
-                    time:timeValue,
+                    time:selectedTrajet.date,
                     price:selectedTrajet.price
                 })
             })
-            .then (response => response.json())
-            .then (newData => {
-                console.log(newData)
-                //Redirection vers cart.html
-            window.location.href = 'cart.html';
-            })
+              .then (response => response.json())
+              .then (newTrajet => 
+                  console.log('newCart saved:'+ newTrajet))
 
+            //Ajout du selectedTrajet à la collection BOOKINGS
+            fetch('http://localhost:3000/mybookings',{
+                method:'POST',
+                headers:{'Content-Type':'application/json'},
+                body:JSON.stringify({
+                    departure: selectedTrajet.departure,
+                    arrival: selectedTrajet.arrival,
+                    time:selectedTrajet.date,
+                    price:selectedTrajet.price,
+                    duree:selectedTrajet.date
+                })
+            })
+              .then (response => response.json())
+              .then (newBooking => 
+                  console.log('newBooking saved:'+ newBooking))
             
-        });
-    });
-}
+                  //Suppression du bloc trip du bouton cliqué
+            button.parentNode.remove();
+            //Redirection vers cart.html
+            window.location.href = 'cart.html'
+        })
+    })
+  }
