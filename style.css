@@ -141,6 +141,7 @@ h3 {
 }
 /*-------------LES BLOCS INVISIBLES---------------------------*/
 /*-------------LES BLOCS TRIP---------------------------*/
+
 .trip {
   background-color: #f6eeef;
   border-radius: 5px;
@@ -149,6 +150,10 @@ h3 {
   justify-content: space-around;
   align-items: center;
   margin: 10px;
+  text-align: center;
+}
+#content-trip {
+  width: 100%;
 }
 /*------------- A VERIFIER --------------------------*/
 .btn btn-success,

@@ -1,3 +1,8 @@
+//document.querySelector("#btn-search").addEventListener("click", function () {
+document.querySelector("#anyvoyage-booking").style.display = "none";
+document.querySelector("#book-container-booking").innerHTML += `
+	<span class="title-result-content">My Bookings</span>
+	`;
 fetch("http://localhost:3000/mybookings")
   .then((response) => response.json())
   .then((data) => {
@@ -22,10 +27,6 @@ fetch("http://localhost:3000/mybookings")
         const dureeMinutes = duree % 60;
 
         //Création des bookings
-        document.querySelector("#anyvoyage-booking").style.display = "none";
-        document.querySelector("#book-container-booking").innerHTML += `
-	<span class="title-result-content">My Bookings</span>
-	`;
         document.querySelector("#book-container-booking").innerHTML += `
 				<div class ="trip">
 					<div>
@@ -56,5 +57,12 @@ fetch("http://localhost:3000/mybookings")
 						<p class="pub">Enjoy your travels with Tickethack</p>
 					</div>
 			`;
+    } else {
+      console.log("No booking yet");
+      document.querySelector("#result-content-booking").innerHTML += `
+      <div id="anyvoyage-booking">
+          <p id="title-booking">No booking yet.</p>
+          <p>Why not plan a trip?</p>
+        </div>`;
     }
   });

@@ -49,6 +49,7 @@
   align-items: center;
   text-align: center;
   flex-direction: column;
+  height: 90%;
 }
 .title-result-content {
   justify-content: center;
