@@ -1,5 +1,6 @@
 let panierCart = []; //C'est le panier des trajets
 let totalPrix; //Montant total des trajets
+let searchCart;
 document.querySelector('#anyvoyage-cart').style.display = "none"
 document.querySelector('#result-content-cart').innerHTML += `
         <span class="title-result-content">My Cart</span>
@@ -7,7 +8,7 @@ document.querySelector('#result-content-cart').innerHTML += `
 fetch('http://localhost:3000/mycartBook')
 	.then(response => response.json())
 	.then(data => {
-		console.log(data)
+		searchCart = data;
 		data.allCarts.forEach((cart,index) => {
 
                     //Conversion de 'time'
@@ -47,12 +48,33 @@ fetch('http://localhost:3000/mycartBook')
                             <button type="button" id="purchase" class="btn btn-success">Purchase</button>
                         </div>
                     `  
+                    //Click sur DELETE pour supprimer un cart
+                    addEventListenersToDeleteButtons()
+
                     //Click sur logo PURCHASE pour envoyé le CART dans la collection BOOKINGS
                     document.querySelector("#purchase").addEventListener("click", function () {
                     window.location.href = 'bookings.html'
                     })
         });  
- 
+
+// Ajout de l'écoute sur les boutons DELETE
+function addEventListenersToDeleteButtons() {
+    const deleteButtons = document.querySelectorAll(".btn-success");
+  
+      deleteButtons.forEach((button, index) => {
+          button.addEventListener('click', function () {
+              const selectedCart = searchCart.carts[index];
+
+              //Suppression du Cart selectionné
+            fetch(`http://localhost:3000/mycartBook/${index}`,{
+                method:'DELETE'})
+                .then (response => response.json())
+                .then (deleteTrajet => 
+                    console.log('Cart deleted:'+ deleteTrajet))    
+            })
+        });
+}
+            
 //Click sur logo Tickethack pour revenir à l'accueil avec les trajets - celui booké
 document.querySelector("#tickethack").addEventListener("click", function () {
     window.location.href = 'index.html'

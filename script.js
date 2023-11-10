@@ -66,12 +66,6 @@ function addEventListenersToBookButtons() {
     bookButtons.forEach((button, index) => {
         button.addEventListener('click', function () {
             const selectedTrajet = searchData.trip[index];
-
-            // Conversion de la date
-            //const dateObject = new Date(selectedTrajet.date);
-
-            // Utilisation de toISOString pour formater la date pour l'intégrer à l'URL
-            //const timeValue = dateObject.toISOString();
             
             //Ajout du selectedTrajet à la collection CARTS
             fetch('http://localhost:3000/mycartBook',{
