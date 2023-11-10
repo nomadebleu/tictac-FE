@@ -47,6 +47,10 @@ fetch('http://localhost:3000/mycartBook')
                             <button type="button" id="purchase" class="btn btn-success">Purchase</button>
                         </div>
                     `  
+                    //Click sur logo PURCHASE pour envoyé le CART dans la collection BOOKINGS
+                    document.querySelector("#purchase").addEventListener("click", function () {
+                    window.location.href = 'bookings.html'
+                    })
         });  
  
 //Click sur logo Tickethack pour revenir à l'accueil avec les trajets - celui booké
@@ -54,8 +58,7 @@ document.querySelector("#tickethack").addEventListener("click", function () {
     window.location.href = 'index.html'
 });
 
-//Click sur logo PURCHASE pour envoyé le CART dans la collection BOOKINGS
-//document.querySelector("#purchase").addEventListener("click", function () {})
+
 
 
 
