@@ -46,7 +46,6 @@ document.querySelector("#btn-search").addEventListener("click", function () {
                     `;
 
           // RETRAIT des IMAGES & MESS avec DISPLAY NONE
-          document.querySelector("#no-book-container").style.display = "none";
           document.querySelector(".img-content-right").style.display = "none";
         });
 

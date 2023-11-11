@@ -87,6 +87,7 @@ function addEventListenersToDeleteButtons() {
         .then((deleteTrajet) => console.log("Cart deleted:" + deleteTrajet));
     //Suppression du bloc trip du bouton cliqué
     button.parentNode.remove();
+    document.querySelector('#total-amount').textContent --;
     // if (selectedCart.length === 0){
     //     document.querySelector("#result-content-cart").innerHTML -= `
     //                     <div id="checkout-summary">
@@ -98,6 +99,16 @@ function addEventListenersToDeleteButtons() {
     });
   });
 }
+// function resetPurchase(){
+//     for (let i=0; i < document.querySelectorAll('#delete').length; i++) {
+//         document.querySelectorAll('#delete')[i].addEventListener('click', function(){
+//           this.parentNode.remove();
+//           document.querySelector('#total-amount').textContent --;
+//         });
+//         } 
+       
+
+// }; 
 
 //Click sur logo Tickethack pour revenir à l'accueil avec les trajets - celui booké
 document.querySelector("#tickethack").addEventListener("click", function () {
