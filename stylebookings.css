@@ -14,6 +14,8 @@
 /*-------------CONTAINER GRID------------------------------*/
 #container-page {
   display: grid;
+  height: 100vh;
+  width: 100vw;
   grid-template-rows: repeat(9, 1fr);
   grid-template-columns: repeat(13, 1fr);
 }
@@ -44,7 +46,12 @@
   font-size: 20px;
 }
 /*-------------BLOC IF NO BOOKING  ---------------------------*/
-#book-container-booking,
+#book-container-booking {
+  overflow: scroll;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+}
 .result-content {
   grid-row-start: 4;
   grid-row-end: 9;
