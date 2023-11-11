@@ -11,14 +11,15 @@ fetch("http://localhost:3000/mycartBook")
   .then((data) => {
     if (data.result) {
       searchCart = data;
-      data.allCarts.forEach((cart, index) => {
+      console.log(searchCart)
+      data.allCarts.forEach(cart => {
         //Conversion de 'time'
         const dateValue = cart.date;
         const timeValue = moment(dateValue).format("HH:mm");
 
         //Création des bookings
         document.querySelector("#book-container-cart").innerHTML += `
-                        <div class="trip" id="trip-${index}">
+                        <div class="trip" id="trip-${cart._id}">
                             <div>
                                 <p id="departure">${cart.departure}</p>
                             </div>
@@ -49,6 +50,7 @@ fetch("http://localhost:3000/mycartBook")
                             <button type="button" id="purchase" class="btn btn-success">Purchase</button>
                         </div>
                     `;
+    addEventListenersToDeleteButtons()
     } else {
       console.log("Notickets in your cart");
       document.querySelector("#result-content-cart").innerHTML += `
@@ -58,7 +60,8 @@ fetch("http://localhost:3000/mycartBook")
         </div>`;
     }
     //}
-    //Click sur DELETE pour supprimer un cart
+  
+
     //addEventListenersToDeleteButtons();
 
     //Click sur logo PURCHASE pour envoyé le CART dans la collection BOOKINGS
@@ -67,29 +70,33 @@ fetch("http://localhost:3000/mycartBook")
     });
   });
 //});
-// Ajout de l'écoute sur les boutons DELETE
-/*function addEventListenersToDeleteButtons() {
-  const deleteButtons = document.querySelectorAll(".btn-success");
+
+// Fonction ECOUTE des boutons DELETE
+function addEventListenersToDeleteButtons() {
+  const deleteButtons = document.querySelectorAll("#delete");
 
   deleteButtons.forEach((button, index) => {
     button.addEventListener("click", function () {
-      const selectedCart = searchCart.carts[index];
+      const selectedCart = searchCart.allCarts[index];
 
       //Suppression du Cart selectionné
-      fetch(`http://localhost:3000/mycartBook/${index}`, {
+      fetch(`http://localhost:3000/mycartBook/${selectedCart._id}`, {
         method: "DELETE",
       })
         .then((response) => response.json())
         .then((deleteTrajet) => console.log("Cart deleted:" + deleteTrajet));
+    //Suppression du bloc trip du bouton cliqué
+    button.parentNode.remove();
+    // if (selectedCart.length === 0){
+    //     document.querySelector("#result-content-cart").innerHTML -= `
+    //                     <div id="checkout-summary">
+    //                         <p id="total-title">Total:     <span id="total-amount"> ${totalPrix} €</span></p>
+    //                         <button type="button" id="purchase" class="btn btn-success">Purchase</button>
+    //                     </div>
+    //                 `;
+    // }
     });
   });
-}*/
-for (i = 0; i < document.querySelectorAll("#delete").length; i++) {
-  document
-    .querySelectorAll("#delete")
-    [i].addEventListener("click", function () {
-      this.parentNode.remove();
-    });
 }
 
 //Click sur logo Tickethack pour revenir à l'accueil avec les trajets - celui booké

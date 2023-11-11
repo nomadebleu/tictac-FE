@@ -110,7 +110,7 @@ function addEventListenersToBookButtons() {
               .then (newBooking => 
                   console.log('newBooking saved:'+ newBooking))
             
-                  //Suppression du bloc trip du bouton cliqué
+            //Suppression du bloc trip du bouton cliqué
             button.parentNode.remove();
             //Redirection vers cart.html
             window.location.href = 'cart.html'
