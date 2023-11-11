@@ -15,10 +15,9 @@ document.querySelector("#btn-search").addEventListener("click", function () {
   })
     .then((response) => response.json())
     .then((data) => {
-    
       if (data.result) {
         searchData = data;
-        console.log(searchData)
+        console.log(searchData);
         // Rajout de l'index pour identifier chaque trajet
         data.trip.forEach((trajet, index) => {
           const dateValue = trajet.date;
@@ -52,10 +51,9 @@ document.querySelector("#btn-search").addEventListener("click", function () {
 
         // Fonction pour ajouter des écouteurs à chaque trajet une fois qu'ils sont créés
         addEventListenersToBookButtons();
-
       } else {
         console.log("Pas de trajet");
-        document.querySelector("#content-trip").innerHTML += `
+        document.querySelector("#content-trip").innerHTML = `
 				<div id="no-book-container" class="img-content-right">
             <div class="image-top">
               <img class="imgtrain" src="images/notfound.png" />
@@ -75,45 +73,43 @@ document.querySelector("#btn-search").addEventListener("click", function () {
 function addEventListenersToBookButtons() {
   const bookButtons = document.querySelectorAll(".btn-success");
 
-    bookButtons.forEach((button, index) => {
-        button.addEventListener('click', function () {
-            const selectedTrajet = searchData.trip[index];
-            
-            //Ajout du selectedTrajet à la collection CARTS
-            fetch('http://localhost:3000/mycartBook',{
-                method:'POST',
-                headers:{'Content-Type':'application/json'},
-                body:JSON.stringify({
-                    departure: selectedTrajet.departure,
-                    arrival: selectedTrajet.arrival,
-                    time:selectedTrajet.date,
-                    price:selectedTrajet.price
-                })
-            })
-              .then (response => response.json())
-              .then (newTrajet => 
-                  console.log('newCart saved:'+ newTrajet))
+  bookButtons.forEach((button, index) => {
+    button.addEventListener("click", function () {
+      const selectedTrajet = searchData.trip[index];
 
-            //Ajout du selectedTrajet à la collection BOOKINGS
-            fetch('http://localhost:3000/mybookings',{
-                method:'POST',
-                headers:{'Content-Type':'application/json'},
-                body:JSON.stringify({
-                    departure: selectedTrajet.departure,
-                    arrival: selectedTrajet.arrival,
-                    time:selectedTrajet.date,
-                    price:selectedTrajet.price,
-                    duree:selectedTrajet.date
-                })
-            })
-              .then (response => response.json())
-              .then (newBooking => 
-                  console.log('newBooking saved:'+ newBooking))
-            
-                  //Suppression du bloc trip du bouton cliqué
-            button.parentNode.remove();
-            //Redirection vers cart.html
-            window.location.href = 'cart.html'
-        })
-    })
-  }
+      //Ajout du selectedTrajet à la collection CARTS
+      fetch("http://localhost:3000/mycartBook", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          departure: selectedTrajet.departure,
+          arrival: selectedTrajet.arrival,
+          time: selectedTrajet.date,
+          price: selectedTrajet.price,
+        }),
+      })
+        .then((response) => response.json())
+        .then((newTrajet) => console.log("newCart saved:" + newTrajet));
+
+      //Ajout du selectedTrajet à la collection BOOKINGS
+      fetch("http://localhost:3000/mybookings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          departure: selectedTrajet.departure,
+          arrival: selectedTrajet.arrival,
+          time: selectedTrajet.date,
+          price: selectedTrajet.price,
+          duree: selectedTrajet.date,
+        }),
+      })
+        .then((response) => response.json())
+        .then((newBooking) => console.log("newBooking saved:" + newBooking));
+
+      //Suppression du bloc trip du bouton cliqué
+      button.parentNode.remove();
+      //Redirection vers cart.html
+      window.location.href = "cart.html";
+    });
+  });
+}
