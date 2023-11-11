@@ -46,6 +46,7 @@ document.querySelector("#btn-search").addEventListener("click", function () {
                     `;
 
           // RETRAIT des IMAGES & MESS avec DISPLAY NONE
+          document.querySelector("#no-book-container").style.display = "none";
           document.querySelector(".img-content-right").style.display = "none";
         });
 
@@ -91,26 +92,25 @@ function addEventListenersToBookButtons() {
         .then((response) => response.json())
         .then((newTrajet) => console.log("newCart saved:" + newTrajet));
 
-            //Ajout du selectedTrajet à la collection BOOKINGS
-            fetch('http://localhost:3000/mybookings',{
-                method:'POST',
-                headers:{'Content-Type':'application/json'},
-                body:JSON.stringify({
-                    departure: selectedTrajet.departure,
-                    arrival: selectedTrajet.arrival,
-                    time:selectedTrajet.date,
-                    price:selectedTrajet.price,
-                    duree:selectedTrajet.date
-                })
-            })
-              .then (response => response.json())
-              .then (newBooking => 
-                  console.log('newBooking saved:'+ newBooking))
-            
-                  //Suppression du bloc trip du bouton cliqué
-            button.parentNode.remove();
-            //Redirection vers cart.html
-            window.location.href = 'cart.html'
-        })
-    })
-  }
+      //Ajout du selectedTrajet à la collection BOOKINGS
+      fetch("http://localhost:3000/mybookings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          departure: selectedTrajet.departure,
+          arrival: selectedTrajet.arrival,
+          time: selectedTrajet.date,
+          price: selectedTrajet.price,
+          duree: selectedTrajet.date,
+        }),
+      })
+        .then((response) => response.json())
+        .then((newBooking) => console.log("newBooking saved:" + newBooking));
+
+      //Suppression du bloc trip du bouton cliqué
+      button.parentNode.remove();
+      //Redirection vers cart.html
+      window.location.href = "cart.html";
+    });
+  });
+}
